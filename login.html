@@ -58,6 +58,9 @@
                             <input required type="password" id="Re-password">
                         </div>
                     </div>
+
+                    <!-- gender selector -->
+
                     <div style="margin-top: 1.5rem;">
                         <label class="d-flex justify-content-center">SELECT THE GENDER</label>
                         <section class="d-flex justify-content-around" style="margin: 20px;">
@@ -87,41 +90,58 @@
                             </div>
                         </section>
                     </div>
+
+                    <!-- sign up button -->
+
                     <div class="d-flex justify-content-center" style="margin-top: 2rem; margin-bottom: 1rem;">
                         <button class="sign-up-button">Sign Up</button>
                     </div>
                 </form>
             </div>
+
+            <!-- login form -->
+
             <form class="login-container" id="login-container" style="display: none;">
-                 <div class="d-flex justify-content-center">
-                     <h3>
-                         LOGIN
-                     </h3>
-                 </div>
-                 <div style="margin-top: 1.5rem;">
-                     <label for="L-UserName">UserName</label><br>
-                     <input required type="text" id="L-UserName" style="width: 100%;" placeholder="UserName">
-                 </div>
-                 <div style="margin-top: 1.5rem;">
+                <div class="d-flex justify-content-center">
+                    <h3>
+                        LOGIN
+                    </h3>
+                </div>
+                <!-- user name -->
+                <div style="margin-top: 1.5rem;">
+                    <label for="L-UserName">UserName</label><br>
+                    <input required type="text" id="L-UserName" style="width: 100%;" placeholder="UserName">
+                </div>
+
+                <!-- password -->
+
+                <div style="margin-top: 1.5rem;">
                     <label for="L-password">password</label><br>
                     <input required type="password" id="L-password" style="width: 100%;" placeholder="password">
                 </div>
+
+                <!-- login button -->
                 <div class="d-flex justify-content-center" style="margin-top: 2rem; margin-bottom: 1rem;">
                     <button class="login-button">login</button>
                 </div>
             </form>
         </div>
         <p id="demo"></p>
+        <!-- javascript -->
+
         <script>
             var username;
             var password;
             document.getElementById("form-tag").onsubmit = function (event) {
                 event.preventDefault()
-    // username  and password
+                // getting username  and password
                 username = document.getElementById("UserName").value;
                 password = document.getElementById("Password").value;
+
+                // printing values in console
+
                 console.log(username);
-                console.log(password );
+                console.log(password);
 
                 document.getElementById("sign-up-container").style.display = "none";
                 document.getElementById("login-container").style.display = "block";
@@ -131,10 +151,10 @@
             var FirstName;
             var LastName;
             var Phonenumber;
-            document.getElementById("login-container").onsubmit = function(event){
+            document.getElementById("login-container").onsubmit = function (event) {
                 event.preventDefault()
 
-// login   user name  and password
+                //getting login   user name  and password
 
                 login_username = document.getElementById("L-UserName").value;
                 login_password = document.getElementById("L-password").value;
@@ -142,22 +162,20 @@
                 LastName = document.getElementById("LastName").value;
                 Phonenumber = document.getElementById("Phonenumber").value;
 
+                // printing values in console
 
                 console.log(login_username);
                 console.log(login_password);
-// comparing username and password
+                // comparing username and password
 
-                if((username === login_username) && (password === login_password)){
+                if ((username === login_username) && (password === login_password)) {
                     document.getElementById("login-container").style.display = "none";
-                  window.location.href = '/'
+                    window.location.href = '/'
                 }
-                else{
+                else {
                     window.alert("UserName or Password is wrong")
                 }
             }
-
-    
-    
         </script>
     </section>
 </body>
